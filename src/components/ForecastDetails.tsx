@@ -6,6 +6,38 @@ interface ForecastDetailsProps {
     forecastWeather: FormattedData
 }
 
+const weatherEmojis: { [key: string]: string } = {
+    "clear sky": "☀️",
+    "few clouds": "🌤️",
+    "scattered clouds": "⛅",
+    "broken clouds": "🌥️",
+    "overcast clouds": "☁️",
+    "light rain": "🌦️",
+    "moderate rain": "🌧️",
+    "heavy intensity rain": "🌧️💦",
+    "very heavy rain": "🌧️🌊",
+    "extreme rain": "🌊🌧️",
+    "freezing rain": "🥶🌧️",
+    "thunderstorm with light rain": "⛈️🌦️",
+    "thunderstorm with rain": "⛈️🌧️",
+    "thunderstorm with heavy rain": "⛈️🌊",
+    "light thunderstorm": "🌩️",
+    "thunderstorm": "⛈️",
+    "heavy thunderstorm": "🌩️⚡",
+    "ragged thunderstorm": "🌩️🌪️",
+    "light snow": "🌨️",
+    "snow": "❄️",
+    "heavy snow": "❄️❄️",
+    "mist": "🌫️",
+    "fog": "🌫️🌁",
+    "haze": "🌁",
+    "sand": "🏜️",
+    "dust": "🌪️🏜️",
+    "volcanic ash": "🌋🌫️",
+    "squalls": "🌬️🌊",
+    "tornado": "🌪️🌪️"
+}
+
 const ForecastDetails:React.FC<ForecastDetailsProps> = ({forecastWeather}) => {
 
     const [chosenData, setChosenData] = useState<string>('')
@@ -34,7 +66,11 @@ const ForecastDetails:React.FC<ForecastDetailsProps> = ({forecastWeather}) => {
                 <ul className={styles.forecasts}>
                     {chosenForecast.map((forecast, index) => (
                         <li key={index}>
-                        {forecast.time} - {forecast.description} - {forecast.temperature}°C
+                            <div>
+                                <span>{forecast.time} - </span>
+                                <span title={forecast.description}>{weatherEmojis[forecast.description] || "❓"}</span>
+                                <span> - {forecast.temperature}°C</span>
+                            </div>
                         </li>
                     ))}
                 </ul>
