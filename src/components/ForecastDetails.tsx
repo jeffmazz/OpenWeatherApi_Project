@@ -67,9 +67,9 @@ const ForecastDetails:React.FC<ForecastDetailsProps> = ({forecastWeather}) => {
                     {chosenForecast.map((forecast, index) => (
                         <li key={index}>
                             <div>
-                                <span>{forecast.time} - </span>
-                                <span title={forecast.description}>{weatherEmojis[forecast.description] || "❓"}</span>
-                                <span> - {forecast.temperature}°C</span>
+                                <span> {forecast.time} </span>
+                                <span title={forecast.description} className={styles.emoji}>{weatherEmojis[forecast.description] || "❓"}</span>
+                                <span> {forecast.temperature}°C </span>
                             </div>
                         </li>
                     ))}

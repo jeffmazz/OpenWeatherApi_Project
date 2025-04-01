@@ -43,3 +43,7 @@ h3 {
 .forecasts li:nth-child(1) {
     padding-top: 0;
 }
+
+.emoji {
+    font-size: 16pt;
+}
