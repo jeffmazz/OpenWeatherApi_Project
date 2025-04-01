@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react"
-import { getCurrentWeather, getForecastWeather, FormattedData } from "./services/weatherService"
+import { getCurrentWeather, getForecastWeather } from "./services/weatherService"
 import { WeatherResponse } from "./models/Weather"
+import { FormattedData } from "./models/ForecastWeather";
 import { FaWind } from "react-icons/fa6";
 import { IoWater } from "react-icons/io5";
 
 import WeatherModal from "./components/WeatherModal";
-
+import ForecastDetails from "./components/ForecastDetails";
 function App() {
 
   const [city, setCity] = useState<string>("Nova Iorque")
@@ -77,6 +78,10 @@ function App() {
               <button onClick={() => setIsModalOpen(true)} className="openModalButton"> Next Days </button>
 
               <WeatherModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+
+                <ForecastDetails forecastWeather={forecastWeather} />
+
+                {/*
                 <div className="days">
                   {Object.keys(forecastWeather).map((date) => (
                     <div key={date} className="day">
@@ -90,6 +95,7 @@ function App() {
                     </div>
                   ))}
                 </div>
+                */}
               </WeatherModal>
             </div>
           </>

@@ -92,32 +92,3 @@ input:hover {
   background-color: rgb(30, 104, 138);
   color: #FFF;
 }
-
-.days {
-  display: flex;
-  align-items: start;
-  justify-content: center;
-  gap: 25px;
-}
-
-.days h3 {
-  color: #333333;
-}
-
-.day {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  font-size: 11pt;
-}
-
-.day_infos {
-  text-align: center;
-  padding: 3px;
-  backdrop-filter: blur(2px);
-  border-radius: 10px;
-  box-shadow: 1px 1px 1px 0 rgba(0,0,0,.2);
-  color: #1E3A8A;
-}

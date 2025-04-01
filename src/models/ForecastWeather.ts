@@ -54,3 +54,13 @@ export interface ForecastResponse {
     list: ForecastHour[]
     message?: number
 }
+
+export interface FormattedData {
+    [date:string] : FormattedDataItem[]
+}
+
+export interface FormattedDataItem {
+    time: string
+    temperature: number
+    description: string
+  }

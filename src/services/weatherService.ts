@@ -1,6 +1,5 @@
 import axios from "axios"
-import { ForecastResponse, ForecastHour } from "../models/ForecastWeather"
-
+import { ForecastResponse, ForecastHour, FormattedData } from "../models/ForecastWeather"
 const API_KEY = import.meta.env.VITE_API_KEY
 const BASE_URL = "https://api.openweathermap.org/data/2.5"
 
@@ -23,17 +22,7 @@ export const getCurrentWeather = async(city: string) => {
     }
 }
 
-export interface FormattedData {
-    [date:string] : {
-        time: string
-        temperature: number
-        description: string
-    }[]
-}
-
 const formattedData = (response:ForecastResponse): FormattedData => {
-    
-    let daysCount = 0
 
     return response.list.reduce((acc:FormattedData, item:ForecastHour) => {
 
@@ -41,8 +30,6 @@ const formattedData = (response:ForecastResponse): FormattedData => {
         const hour = new Date(item.dt * 1000).toLocaleTimeString()
         
         if(!acc[date]) {
-            daysCount++
-            if(daysCount > 3) return acc
             acc[date] = []
         }
         
