@@ -44,9 +44,7 @@ input {
   outline: none;
   transition: .5s;
 }
-
-input:hover,
-.openModalButton:hover {
+input:hover {
   box-shadow: 0 0 10px 0 rgba(30, 104, 138,.5);
 }
 
@@ -88,6 +86,11 @@ input:hover,
   outline: none;
   cursor: pointer;
   transition: .5s;
+}
+.openModalButton:hover {
+  box-shadow: 0 0 10px 0 rgba(30, 104, 138,.5);
+  background-color: rgb(30, 104, 138);
+  color: #FFF;
 }
 
 .days {
