@@ -11,11 +11,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("bg-image.jpeg");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background: radial-gradient(circle, white 0%, #4A678A 90%);
 }
 
 .main_div {
