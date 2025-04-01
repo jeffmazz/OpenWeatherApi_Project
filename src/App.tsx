@@ -9,7 +9,7 @@ import WeatherModal from "./components/WeatherModal";
 import ForecastDetails from "./components/ForecastDetails";
 function App() {
 
-  const [city, setCity] = useState<string>("Nova Iorque")
+  const [city, setCity] = useState<string>("New York")
   const [noData, setNoData] = useState<string>("Digite o nome da cidade no campo acima!")
   const [currentWeather, setCurrentWeather] = useState<WeatherResponse | null>(null)
   const [forecastWeather, setForecastWeather] = useState<FormattedData | null>(null)
