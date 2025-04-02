@@ -50,9 +50,9 @@ const ForecastDetails:React.FC<ForecastDetailsProps> = ({forecastWeather}) => {
     }, [chosenData, forecastWeather])
 
   return (
-    <div>
+    <div className={styles.forecastDetails}>
         {forecastWeather &&
-            <ul className={styles.list}>
+            <ul className={styles.buttonsList}>
                 {Object.keys(forecastWeather).map((key) => (
                     <li key={key}>
                         <button onClick={() => setChosenData(key)}> {key} </button>
@@ -61,7 +61,7 @@ const ForecastDetails:React.FC<ForecastDetailsProps> = ({forecastWeather}) => {
             </ul>
         }
         {chosenData && chosenForecast &&
-            <div className={styles.buttons}>
+            <div>
                 <h3> {chosenData} </h3>
                 <ul className={styles.forecasts}>
                     {chosenForecast.map((forecast, index) => (

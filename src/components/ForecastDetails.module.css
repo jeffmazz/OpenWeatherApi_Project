@@ -1,4 +1,11 @@
-.list {
+.forecastDetails {
+    position: relative;
+    width: 100%;
+}
+
+.buttonsList {
+    max-width: 400px;
+    margin: 0 auto;
     list-style: none;
     display: flex;
     align-items: center;
@@ -12,7 +19,10 @@ li button {
     padding: 7px;
     background-color: #FFF;
     border: 2px solid rgb(30, 104, 138);
-    border-radius: 5px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
     font-weight: bold;
     transition: .5s;
 }
@@ -23,43 +33,36 @@ li button:hover {
 }
 
 h3 {
-    display: block;
     text-align: center;
-    margin: 15px 0;
+    margin: 15px 0 5px 0;
     color: #1E3A8A;
 }
 
 .forecasts {
     list-style: none;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .forecasts li {
     padding: 5px;
-    font-size: 18pt;
-}
-.forecasts li:nth-child(1) {
-    padding-top: 0;
+    font-size: 15pt;
+    border-end-end-radius: 10px;
+    box-shadow: 2px 2px 0 0 rgba(30, 104, 138, .7);
 }
 
 .emoji {
-    font-size: 25pt;
+    font-size: 20pt;
 }
 
-@media (max-width: 768px) {
-    .emoji {
-        font-size: 22pt;
+@media (max-width:480px) {
+    .forecasts {
+        flex-direction: column;
     }
-}
-
-@media (max-width: 480px) {
-    .forecasts li {
-        font-size: 15pt;
-    }
-    .emoji {
-        font-size: 20pt;
+    .forecasts li:nth-child(1) {
+        padding-top: 0;
     }
 }

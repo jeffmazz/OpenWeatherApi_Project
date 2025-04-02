@@ -1,5 +1,7 @@
 import { ReactNode } from "react";
 import styles from "./WeatherModal.module.css"
+import { RiCloseLargeFill } from "react-icons/ri";
+
 
 interface WeatherModalProps {
     isOpen: boolean;
@@ -15,7 +17,7 @@ const WeatherModal = ({isOpen, onClose, children}: WeatherModalProps) => {
         <div className={styles.modalOverlay}>
             <div className={styles.modalContent}>
                 <button onClick={onClose} className={styles.closeButton}>
-                    close
+                    <RiCloseLargeFill/>
                 </button>
                 {children}
             </div>

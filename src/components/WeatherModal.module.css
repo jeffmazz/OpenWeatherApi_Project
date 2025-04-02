@@ -13,9 +13,9 @@
   
   .modalContent {
     background: linear-gradient(to top right, #87CEEB, #ffffff);
-    padding: 50px 10px;
+    padding: 40px 10px 10px 10px;
     border-radius: 10px;
-    max-width: 400px;
+    max-width: 500px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     position: relative;
   }
@@ -31,8 +31,19 @@
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
+    transition: .5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .closeButton:hover {
-    background: darkred;
+    background: rgb(196, 9, 9);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+  }
+
+  @media (max-width: 480px) {
+    .modalContent {
+      padding: 50px 10px 10px 10px;
+    }
   }
